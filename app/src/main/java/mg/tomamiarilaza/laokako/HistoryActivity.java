@@ -1,66 +1,36 @@
 package mg.tomamiarilaza.laokako;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Spinner;
 
-import mg.tomamiarilaza.laokako.utils.FilterPopup;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-public class MainActivity extends AppCompatActivity {
-    Context context;
+import java.util.List;
+
+import mg.tomamiarilaza.laokako.history.History;
+import mg.tomamiarilaza.laokako.menu.Menu;
+import mg.tomamiarilaza.laokako.utils.HistoryListAdapter;
+import mg.tomamiarilaza.laokako.utils.IngredientListAdapter;
+
+public class HistoryActivity extends AppCompatActivity {
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.history_layout);
         context = this;
-        setContentView(R.layout.proposition_activity);
-
-        // Show popup when clicking filter button
-        ImageView filterButton = findViewById(R.id.filter_button);
-        filterButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FilterPopup filterPopup = new FilterPopup(MainActivity.this);
-                filterPopup.show();
-            }
-        });
+        configureHistoryList();
 
         activateMenu();
-        activateMenuDetailSwitcher();
 
     }
 
-    private void activateMenuDetailSwitcher() {
-        Button menuDetailButton = findViewById(R.id.menu_detail_button);
-        menuDetailButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switchToMenuDetail();
-            }
-        });
-
-        ImageView validateMenuButton = findViewById(R.id.validate_menu_icon);
-        validateMenuButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switchToMenuDetail();
-            }
-        });
-    }
-
-    private void switchToMenuDetail() {
-        Intent intent = new Intent(context, MenuDetailActivity.class);
-        startActivity(intent);
-    }
-
-    // give the menu their listener and action
     private void activateMenu() {
         ImageView appInfoButton = findViewById(R.id.app_info_menu_button);
         appInfoButton.setOnClickListener(new View.OnClickListener() {
@@ -84,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
         propositionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(context, ParameterActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(context, MainActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -93,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
         historyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, HistoryActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(context, HistoryActivity.class);
+                //startActivity(intent);
             }
         });
 
@@ -107,4 +77,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    // Configure the recyclerView of the history
+    private void configureHistoryList() {
+        RecyclerView recyclerView = findViewById(R.id.history_list);
+
+        List<History> histories = History.getLastHistories();
+        HistoryListAdapter adapter = new HistoryListAdapter(histories, this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+    }
+
 }

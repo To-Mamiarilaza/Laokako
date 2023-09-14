@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Laokako</string>
+    <string name="welcome_text">Tongasoa eto amin\'ny</string>
+    <string name="app_name_big">LAOKAKO</string>
+    <string name="app_description">Ity \" Application \" ity dia natao mba hanamorana ny fisafidianana laoka.\n\nNatao manokana ho an\'ireo mpianatra mipetraka irery izy ity mba hanala fahasahiranana azy ireo ary indrindra hialana amin\'ireo laoka miverimberina matetika.</string>
+    <string name="author_name">To   MAMIARILAZA</string>
+    <string name="menu_name">Voatavo sy Percil</string>
+    <string name="detail_menu_button">Hijery misimisy</string>
+    <string name="menu_recipe_example">Sasana madio tsara avokoa ny fangaro rehetra. Avy eo tetehina madinika ny voatabia sy ny tongolo. Afanaina ny menaka ary rehefa mafana tsara dia arotsaka ao iretsy voalohany ka atao sauce voatabia sy tongolo. Arotsaka ny voatavo avy eo, afangaro matetika ary rehefa masaka vao arotsaka ny percil voatetika madinika</string>
+    <string name="parameter_introduction">Miteraka fanovana eo amin\'ny fanolorana laoka ireto paramètre maromaro ireto</string>
+    <string name="inflation_reference">Ny vidim-piainana eto Antananarivo no atao fitaratra eto</string>
+    <string name="add_menu_description">Fenoina antsakany sy andavany ireo zavatra angatahina rehetra rehefa hanampy laoka vaovao</string>
+    <string name="add_ingredient_warning">Raha mbola tsy ao ilay fangaro tadiavinao dia tokony mampiditra fangaro aloha ianao. Rehefa tsy maintsy ilaina ao anatin\'ilay laoka ilay fangaro dia cochena ilay case kely</string>
+    <string name="menu_description_hint">Eto no apetraka ny fomba fikarakarana ny laoka</string>
 </resources>

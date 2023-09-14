@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ingredient_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_weight="0.4"
+        android:src="@drawable/green_parsley"/>
+
+    <TextView
+        android:id="@+id/ingredient_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="7"
+        android:layout_marginLeft="15dp"
+        android:textSize="14dp"
+        android:text="Voatabia"
+        android:fontFamily="@font/noto_serif_font"
+        android:textColor="@color/light_gray"/>
+
+    <TextView
+        android:id="@+id/ingredient_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:text="200 Ar"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="3"
+        android:fontFamily="@font/noto_serif_italic_font"
+        android:textColor="@color/light_gray"/>
+
+    <CheckBox
+        android:id="@+id/is_primary_ingredient"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_weight="0.2" />
+
+    <ImageView
+        android:id="@+id/reject_new_ingredient"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_weight="0.2"
+        android:src="@drawable/reject"/>
+
+</LinearLayout>

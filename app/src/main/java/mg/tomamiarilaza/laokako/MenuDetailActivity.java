@@ -1,66 +1,38 @@
 package mg.tomamiarilaza.laokako;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Spinner;
 
-import mg.tomamiarilaza.laokako.utils.FilterPopup;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-public class MainActivity extends AppCompatActivity {
-    Context context;
+import mg.tomamiarilaza.laokako.menu.Menu;
+import mg.tomamiarilaza.laokako.utils.IngredientListAdapter;
+
+public class MenuDetailActivity extends AppCompatActivity {
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.menu_detail_activity);
         context = this;
-        setContentView(R.layout.proposition_activity);
+        RecyclerView recyclerView = findViewById(R.id.ingredient_list_recycler);
 
-        // Show popup when clicking filter button
-        ImageView filterButton = findViewById(R.id.filter_button);
-        filterButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FilterPopup filterPopup = new FilterPopup(MainActivity.this);
-                filterPopup.show();
-            }
-        });
+        Menu exampleMenu = Menu.findByName("Karoty sy kisoa");
+
+        // Create and parameter adapter
+        IngredientListAdapter adapter = new IngredientListAdapter(exampleMenu.getIngredients(), this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
 
         activateMenu();
-        activateMenuDetailSwitcher();
-
     }
 
-    private void activateMenuDetailSwitcher() {
-        Button menuDetailButton = findViewById(R.id.menu_detail_button);
-        menuDetailButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switchToMenuDetail();
-            }
-        });
-
-        ImageView validateMenuButton = findViewById(R.id.validate_menu_icon);
-        validateMenuButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switchToMenuDetail();
-            }
-        });
-    }
-
-    private void switchToMenuDetail() {
-        Intent intent = new Intent(context, MenuDetailActivity.class);
-        startActivity(intent);
-    }
-
-    // give the menu their listener and action
     private void activateMenu() {
         ImageView appInfoButton = findViewById(R.id.app_info_menu_button);
         appInfoButton.setOnClickListener(new View.OnClickListener() {

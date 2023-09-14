@@ -1,63 +1,24 @@
 package mg.tomamiarilaza.laokako;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Spinner;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import mg.tomamiarilaza.laokako.utils.FilterPopup;
 
-public class MainActivity extends AppCompatActivity {
-    Context context;
-
+public class AboutAppActivity extends AppCompatActivity {
+    private Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = this;
-        setContentView(R.layout.proposition_activity);
-
-        // Show popup when clicking filter button
-        ImageView filterButton = findViewById(R.id.filter_button);
-        filterButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FilterPopup filterPopup = new FilterPopup(MainActivity.this);
-                filterPopup.show();
-            }
-        });
+        setContentView(R.layout.activity_main);
 
         activateMenu();
-        activateMenuDetailSwitcher();
-
-    }
-
-    private void activateMenuDetailSwitcher() {
-        Button menuDetailButton = findViewById(R.id.menu_detail_button);
-        menuDetailButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switchToMenuDetail();
-            }
-        });
-
-        ImageView validateMenuButton = findViewById(R.id.validate_menu_icon);
-        validateMenuButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switchToMenuDetail();
-            }
-        });
-    }
-
-    private void switchToMenuDetail() {
-        Intent intent = new Intent(context, MenuDetailActivity.class);
-        startActivity(intent);
     }
 
     // give the menu their listener and action
@@ -66,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
         appInfoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, AboutAppActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(context, AboutAppActivity.class);
+                //startActivity(intent);
             }
         });
 
@@ -84,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
         propositionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(context, ParameterActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(context, MainActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="25dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="23dp"
+                android:text="Paramètre"
+                android:textColor="@color/black"
+                android:fontFamily="@font/noto_serif_italic_font"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:letterSpacing="@dimen/letter_spacing"
+                android:text="@string/parameter_introduction"
+                android:textSize="16dp"
+                android:textColor="@color/light_gray"
+                android:fontFamily="@font/noto_serif_italic_font"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:background="@color/line_color"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Isan'ny olona"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="50dp"
+                    android:fontFamily="@font/noto_serif_font"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/minus_button"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="+"
+                    android:textSize="20dp"
+                    android:background="@drawable/green_circle_background" />
+
+                <TextView
+                    android:id="@+id/person_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/noto_serif_font"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/add_button"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="-"
+                    android:textSize="20dp"
+                    android:background="@drawable/green_circle_background" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/black"
+                android:text="Alafosan'ny fiainana"
+                android:textSize="18dp"
+                android:fontFamily="@font/noto_serif_font"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:letterSpacing="@dimen/letter_spacing"
+                android:text="@string/inflation_reference"
+                android:textSize="16dp"
+                android:textColor="@color/light_gray"
+                android:fontFamily="@font/noto_serif_italic_font"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/noto_serif_font"
+                    android:text="- 5"
+                    android:textColor="@color/light_gray"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/noto_serif_font"
+                    android:text="0"
+                    android:textColor="@color/light_gray"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/noto_serif_font"
+                    android:text="+ 5"
+                    android:textColor="@color/light_gray"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <SeekBar
+                android:id="@+id/inflation_seekBar"
+                android:progress="50"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/black"
+                android:text="Sakafo fady"
+                android:textSize="18dp"
+                android:fontFamily="@font/noto_serif_font"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/noto_serif_font"
+                    android:text="Hanampy"/>
+
+                <Spinner
+                    android:id="@+id/allergic_food_selection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="14dp"
+                    android:textColor="@color/light_gray"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_weight="1"
+                    android:text="" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/allergic_food_button"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="+"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:background="@drawable/green_oval_button_background" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/allergic_food_list"
+                android:layout_marginTop="25dp"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/reset_to_default_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hamerina amin'ny laoniny"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/noto_serif_font"
+                    android:letterSpacing="@dimen/letter_spacing"
+                    android:background="@drawable/button_info_background"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_weight="1"
+        android:background="@color/line_color"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/app_info_menu_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/information" />
+
+        <ImageView
+            android:id="@+id/parameter_menu_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/cog_wheel_green" />
+
+        <ImageView
+            android:id="@+id/proposition_menu_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/cloche" />
+
+        <ImageView
+            android:id="@+id/history_menu_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/calendar" />
+
+        <ImageView
+            android:id="@+id/menu_menu_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/book" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

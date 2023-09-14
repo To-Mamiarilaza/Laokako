@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="50dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/noto_serif_font"
+            android:letterSpacing="@dimen/letter_spacing"
+            android:text="Vidiny"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/price_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/price_choice"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1" />
+
+        <EditText
+            android:id="@+id/price_value"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:hint="2000 Ar"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/light_gray"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <!-- Filter for the duration -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/noto_serif_font"
+            android:letterSpacing="@dimen/letter_spacing"
+            android:text="Fotoana "
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/duration_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/duration_choice"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1" />
+
+        <EditText
+            android:id="@+id/duration_value"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:hint="20 min"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/light_gray"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <!-- Spinner for the score -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/noto_serif_font"
+            android:letterSpacing="@dimen/letter_spacing"
+            android:text="Tsirony"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/score_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/score_choice"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1" />
+
+        <EditText
+            android:id="@+id/score_value"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:hint="5"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/light_gray"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/noto_serif_font"
+            android:text="Misy"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+
+        <Spinner
+            android:id="@+id/inner_ingredient_choice"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/noto_serif_font"
+            android:text="Tsy misy"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+
+        <Spinner
+            android:id="@+id/outer_ingredient_choice"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/add_filter_button"
+        android:layout_width="match_parent"
+        android:letterSpacing=".5"
+        android:background="#CC87D050"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/noto_serif_font"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:text="Hanova"/>
+
+
+</LinearLayout>

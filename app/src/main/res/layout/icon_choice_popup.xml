@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="380dp"
+    android:layout_height="wrap_content"
+    android:padding="30dp">
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="12dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Viande"
+                android:textSize="14dp"
+                android:textColor="@color/light_gray"
+                android:textAllCaps="false"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/almost_white_button_background"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Legumes"
+                android:layout_marginRight="20dp"
+                android:textSize="14dp"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:background="@drawable/button_principal_background"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Viande"
+                android:textSize="14dp"
+                android:textColor="@color/light_gray"
+                android:textAllCaps="false"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/almost_white_button_background"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Sauce"
+                android:textSize="14dp"
+                android:textColor="@color/light_gray"
+                android:textAllCaps="false"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/almost_white_button_background"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/icon_display_grid"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="200dp">
+
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

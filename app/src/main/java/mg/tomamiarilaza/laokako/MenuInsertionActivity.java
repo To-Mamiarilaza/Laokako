@@ -1,66 +1,38 @@
 package mg.tomamiarilaza.laokako;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.Spinner;
 
-import mg.tomamiarilaza.laokako.utils.FilterPopup;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-public class MainActivity extends AppCompatActivity {
-    Context context;
+import java.util.List;
+
+import mg.tomamiarilaza.laokako.menu.Ingredient;
+import mg.tomamiarilaza.laokako.menu.Menu;
+import mg.tomamiarilaza.laokako.utils.NewIngredientAdapter;
+
+public class MenuInsertionActivity extends AppCompatActivity {
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.menu_add_layout);
         context = this;
-        setContentView(R.layout.proposition_activity);
+        configureIngredientChoiceSpinner();
 
-        // Show popup when clicking filter button
-        ImageView filterButton = findViewById(R.id.filter_button);
-        filterButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FilterPopup filterPopup = new FilterPopup(MainActivity.this);
-                filterPopup.show();
-            }
-        });
-
+        configureRecyclerView();
         activateMenu();
-        activateMenuDetailSwitcher();
-
     }
 
-    private void activateMenuDetailSwitcher() {
-        Button menuDetailButton = findViewById(R.id.menu_detail_button);
-        menuDetailButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switchToMenuDetail();
-            }
-        });
-
-        ImageView validateMenuButton = findViewById(R.id.validate_menu_icon);
-        validateMenuButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switchToMenuDetail();
-            }
-        });
-    }
-
-    private void switchToMenuDetail() {
-        Intent intent = new Intent(context, MenuDetailActivity.class);
-        startActivity(intent);
-    }
-
-    // give the menu their listener and action
     private void activateMenu() {
         ImageView appInfoButton = findViewById(R.id.app_info_menu_button);
         appInfoButton.setOnClickListener(new View.OnClickListener() {
@@ -84,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
         propositionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(context, ParameterActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(context, MainActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -102,9 +74,27 @@ public class MainActivity extends AppCompatActivity {
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, MenuListActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(context, MenuListActivity.class);
+                //startActivity(intent);
             }
         });
+    }
+
+    private void configureRecyclerView() {
+        RecyclerView recyclerView = findViewById(R.id.required_ingredient_list);
+
+        Menu menu = Menu.findByName("Ravimbomanga");
+        NewIngredientAdapter adapter = new NewIngredientAdapter(menu.getIngredients(), MenuInsertionActivity.this);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+    }
+
+    private void configureIngredientChoiceSpinner() {
+        Spinner ingredientChoice = findViewById(R.id.ingredient_choice_spinner);
+
+        String[] ingredients = {"Percil", "Hena kisoa", "Voatabia"};
+        ArrayAdapter<String> ingredients_adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, ingredients);
+        ingredientChoice.setAdapter(ingredients_adapter);
     }
 }
